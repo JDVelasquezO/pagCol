@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Institución educativa con principios y valores cristianos, brindando educación técnica de excelencia.">
+
+	<title>Centro Técnico Vocacional William Cornelius</title>
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+	<link rel="stylesheet" href="style.css">
+	<link rel="icon" href="img/favicon.png" type="image/png">
+</head>
+<body>
+
+	<div id="app">
+		<header>
+        	<nav class="navbar navbar-expand-lg navbar-dark primary-color fixed-top">
+  				<div class="container">
+
+			    <!-- Navbar brand -->
+				<span class="navbar-brand" style="cursor: pointer">
+					Centro Técnico Vocacional William Cornelius
+				</span>
+
+			    <!-- Collapse button -->
+			    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+			      aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+			      <span class="navbar-toggler-icon"></span>
+			    </button>
+
+			    <!-- Collapsible content -->
+			    <div class="collapse navbar-collapse" id="basicExampleNav">
+
+      			<!-- Links -->
+				<ul class="navbar-nav ml-auto">
+				      <li class="nav-item">
+				        <router-link tag='a' class="nav-link" exact to="/">
+					    		Inicio
+				          <span class="sr-only">(current)</span>
+				        </router-link>
+				      </li>
+				      <li class="nav-item">
+								<router-link tag='a' class="nav-link" exact to="/acerca_de_nosotros">
+										Acerca de Nosotros
+								</router-link>
+				      </li>
+						     
+						      	<!--carreras listado-->
+						<li class="nav-item">
+								<ul class="nav navbar-nav">
+									<li class="dropdown mega-dropdown">
+										<a class="nav-link dropdown-toggle" href="" data-toggle="dropdown">Carreras</a>
+
+										<ul class="dropdown-menu mega-dropdown-menu">
+											<div class="container">
+												<div class="row">
+											<li class="dropdown-header col-lg-4 col-md-12 mb-4">
+												<router-link tag='a' exact to="/carreras">Ver Todas Las Carreras</router-link>
+											</li>
+											<li class="col-lg-4 col-md-12 mb-4">
+						              <ul>
+						                  <li class="dropdown-header">Con Diplomado en:</li>
+						                  <li><router-link tag='a' exact to="/Ciencias_de_la_Salud">Ciencias de la salud</router-link></li>
+						                  <li><router-link tag='a' exact to="/Higiene_Dental">Higiene Dental</router-link></li>
+						                  <li><router-link tag='a' exact to="/Laboratorio_Dental">Laboratorio Dental</router-link></li>
+						                </ul>
+						              </li>
+						              <li class="col-lg-4 col-md-12 mb-4">
+						                <ul>
+						                  <li class="dropdown-header">Con Orientación en:</li>
+						                  <li><router-link tag='a' exact to="/Diseño_Grafico">Diseño Gráfico</router-link></li>
+						                  <li><router-link tag='a' exact to="/Computacion">Computación</router-link></li>
+						                  <li><router-link tag='a' exact to="/Finanzas_y_Admon">Finanzas y Administración</router-link></li>
+						                </ul>
+											</li>
+										</div>
+									</div>
+								</ul>
+
+							</li>
+						</ul>
+					</li>
+					<!--termina listado de carreras-->
+
+					      <li class="nav-item">
+					        <router-link tag='a' class="nav-link" to="/contact">
+						    	Contacto
+					        </router-link>
+					      </li>
+					      &nbsp;&nbsp;&nbsp;
+					      <li class="nav-item">
+					        <router-link tag='a' class="nav-link" exact to="/gallery">
+						    	Galería
+					        </router-link>
+					      </li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<div id="intro" class="view">
+
+			    <div class="d-flex justify-content-center align-items-center h-100">
+			      <div class="mask">
+			      <div class="d-flex justify-content-center text-center">
+
+
+			        <div class="col-md-10">
+			          
+			          <!-- Heading -->
+			          <h1 id="banner" class="display-4 font-weight-bold text-white pt-5">Institución Educativa con Principios y Valores Cristianos</h1>
+
+			          <!-- Divider -->
+			          <hr class="hr-light">
+			          <!-- Description -->
+			          <a href="https://es-la.facebook.com/CTVWC/" target="_blank"><button class="blue-gradient"> Facebook William Cornelius</button></a>
+			          <br>
+			          <hr class="hr-light">
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+			<!--/.Mask-->
+		</header>
+		<main>
+			<router-view></router-view>
+		</main>
+		<footer>
+			<app-footer></app-footer>
+		</footer>
+	</div>
+	
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="https://unpkg.com/vue-router@3.0.6/dist/vue-router.js"></script>
+	<script type="module" src="app.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/5.11.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.11.0/firebase-firestore.js"></script>
+	<script type="module" src="main.js"></script>
+
+	<script src="jquery-3.4.1.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+    <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+		<script src="img/carousel.js"></script>
+	</body>
+</html>
