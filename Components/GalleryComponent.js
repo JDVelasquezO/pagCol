@@ -5,68 +5,68 @@ const GalleryComponent = Vue.component('gallery-content', {
 		return {
 			msg: 'Galería',
 			title: 'Instalaciones del colegio',
-			images: [],
+			goldberg: [],
+			graduacion: [],
+			inicio: [],
+			instalaciones: [],
+			misioneros: [],
+			navidad: [],
+			ninios: [],
+			seminario: [],
+			septiembre: [],
 			loaded: false,
-			opts: [ 'Actividades', 'Carreras' ],
-			subtitle: 'Actividades'
+			subtitle: 'Instalaciones'
 		}
 	},
 
-	created () {
+	created() {
 		window.document.title = 'Galería'
 	},
-	
+
 	mounted() {
 		let banner = document.getElementById('banner')
 		banner.textContent = this.msg
-		this.chargueFirstCollection('actividades')
+
+		this.chargueFirstCollection('instalaciones', this.instalaciones)
+		this.chargueFirstCollection('misioneros', this.misioneros)
+		this.chargueFirstCollection('goldberg', this.goldberg)
+		this.chargueFirstCollection('graduacion', this.graduacion)
+		this.chargueFirstCollection('inicio', this.inicio)
+		this.chargueFirstCollection('navidad', this.navidad)
+		this.chargueFirstCollection('niños', this.ninios)
+		this.chargueFirstCollection('seminario', this.seminario)
+		this.chargueFirstCollection('septiembre', this.septiembre)
 	},
 
 	methods: {
-		chargueFirstCollection (nameCollection) {
+		chargueFirstCollection (nameCollection, array) {
 			db.collection(nameCollection).get()
 			.then((querySnapshot) => {
 				querySnapshot.forEach((doc) => {
-					this.images.push(doc.data())
+					array.push(doc.data())
 					this.loaded = true
 				})
 			})
 		},
-
-		resetCollection (o) {
-			this.subtitle = o
-			this.images = []
-		},
-
-		loadImages (o) {
-			if (o === 'Actividades') {
-				this.resetCollection(o)
-				this.chargueFirstCollection('actividades')
-			} else if (o === 'Carreras') {
-				this.resetCollection(o)
-				this.chargueFirstCollection('carreras')
-			}
-		},
 	},
 
 	template: `
+	<div>
 		<section id="galeria1">
-			<select>
-				<option v-for='o in opts' @click='loadImages(o)'>
-					{{ o }}
-				</option> 
-			</select>
 		  <div class="fondo">
-			  <h2>{{ title }}</h2>
+			  <h2>Instalaciones</h2>
 			  <h2 v-if='!loaded'>Cargando...</h2>
-			  <h2 v-if='loaded'>{{ subtitle }}</h2>
-			  <ul class="galeria" id='gallery'>
-			  	<li v-for='i in images'><a href="#img">
-			  		<img :src="i.url">
-			  	</a></li>
-			  </ul>
+			  <div class="fondo">
+			  <ul class="galeria">
+				<li v-for='i in instalaciones'>
+					<a href="#img1"><img :src="i.url" alt="Instalaciones"></a>
+				</li>
+				</ul>
+			</div>
+			<br>
 		  </div>
 		</section>
+	</div>
 `
 })
 
