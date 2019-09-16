@@ -11,21 +11,21 @@ const ContactTemplate = `
     <!--Grid column-->
     <div class="col-lg-5 col-md-12">
         <!-- Form contact -->
-        <form class="p-5 grey-text">
+        <form method='post' action='form.php' class="p-5 grey-text">
             <div class="md-form form-sm"> <i class="fa fa-user prefix"></i>
-                <input autofocus type="text" id="form3" class="form-control form-control-sm">
+                <input name='name' autofocus type="text" id="form3" class="form-control form-control-sm">
                 <label for="form3">Nombre</label>
             </div>
             <div class="md-form form-sm"> <i class="fa fa-envelope prefix"></i>
-                <input type="text" id="form2" class="form-control form-control-sm">
+                <input name='email' type="text" id="form2" class="form-control form-control-sm">
                 <label for="form2">Correo</label>
             </div>
             <div class="md-form form-sm"> <i class="fa fa-tag prefix"></i>
-                <input type="text" id="form32" class="form-control form-control-sm">
+                <input name='title' type="text" id="form32" class="form-control form-control-sm">
                 <label for="form34">Asunto</label>
             </div>
             <div class="md-form form-sm"> <i class="fa fa-pencil prefix"></i>
-                <textarea type="text" id="form8" class="md-textarea form-control form-control-sm" rows="4"></textarea>
+                <textarea name='body' type="text" id="form8" class="md-textarea form-control form-control-sm" rows="4"></textarea>
                 <label for="form8">Mensaje</label>
             </div>
             <div class="text-center mt-4">
